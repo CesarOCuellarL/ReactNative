@@ -1,6 +1,7 @@
 import React from "react"; 
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
+import ButtonComponent from "../../components/Button";
 
 import { styles } from "./Login.styles";
 

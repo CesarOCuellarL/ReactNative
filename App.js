@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Ionicons from "@react-native-vector-icons/Ionicons";
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import LoginScreen from "./src/pages/Login";
 import SettingsScreen from "./src/pages/Settings";
@@ -40,7 +40,7 @@ export default function App() {
                 iconName = "ios-list";
               }
 
-              return <Ionicons name={IconName} size={size} color={color} />;
+              return <Ionicons name={iconName} size={size} color={color} />;
             },
             tabBarActiveTintColor: "blue",
             tabBarInactiveTintColor: "gray",
