@@ -7,6 +7,7 @@ export default function CatalogoScreen({ onPress }) {
     const [todos, setTodos] = useState();
     async function listTodos(){
         const todosFetched = await list();
+        console.log(todosFetched);
         if(todosFetched) setTodos(todosFetched);
     }
 
@@ -16,7 +17,7 @@ export default function CatalogoScreen({ onPress }) {
     return (
         <View style={styles.container}>
             <Text>Catalogo</Text>
-            {todos && todos.map((todo)=> <text>{`${todo.title} ${todo.author} ${todo.isbn}`}</text>)}
+            {todos && todos.map((todo)=> <Text>{`${todo.title} ${todo.author} ${todo.ISBN}`}</Text>)}
         </View>
     );
 }

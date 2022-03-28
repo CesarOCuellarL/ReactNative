@@ -35,12 +35,16 @@ export default function MainNavigator() {
               tabBarIcon: ({ focused, color, size}) => {
                 let iconName;
   
-                if (route.name === "Home") {
+                if (route.name === "Registro Libros") {
                   iconName = focused
-                    ? "ios-information-circle"
-                    : "ios-information-circle-outline";
-                } else if (route.name === "Settings"){
-                  iconName = "ios-list";
+                    ? "ios-home"
+                    : "ios-home-outline";
+                } else if (route.name === "Catalogo"){
+                  iconName = focused
+                    ? "ios-book"
+                    : "ios-book-outline";
+                } else if (route.name === "Informacion Alumnos"){
+                  iconName = "ios-person";
                 }
   
                 return <Ionicons name={iconName} size={size} color={color} />;
@@ -51,12 +55,17 @@ export default function MainNavigator() {
             >
               <Tab.Screen 
               name="Registro Libros"
+              component={HomeScreen}
+              />
+              <Tab.Screen name="Catalogo" 
+              component={CatalogoScreen}
+              />
+              <Tab.Screen 
+              name="Informacion Alumnos"
               children={(props) => (
-                <HomeScreen {...props} onPress={() => logout()}/>
+                <SettingsScreen {...props} onPress={() => logout()}/>
               )}
               />
-              <Tab.Screen name="Catalogo" component={CatalogoScreen}/>
-              <Tab.Screen name="Settings" component={SettingsScreen}/>
             </Tab.Navigator>
           )}
       </NavigationContainer>
