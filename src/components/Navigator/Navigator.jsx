@@ -7,6 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import LoginScreen from "../../pages/Login";
 import SettingsScreen from "../../pages/Settings";
+import CatalogoScreen from "../../pages/Catalogo";
 import HomeScreen from "../../pages/Home";
 
 import { GlobalContext } from "../../context/global/global.context";
@@ -49,11 +50,12 @@ export default function MainNavigator() {
             })}
             >
               <Tab.Screen 
-              name="Home"
+              name="Registro Libros"
               children={(props) => (
                 <HomeScreen {...props} onPress={() => logout()}/>
               )}
               />
+              <Tab.Screen name="Catalogo" component={CatalogoScreen}/>
               <Tab.Screen name="Settings" component={SettingsScreen}/>
             </Tab.Navigator>
           )}

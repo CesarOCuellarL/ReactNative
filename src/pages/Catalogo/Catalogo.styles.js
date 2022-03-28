@@ -5,15 +5,5 @@ export const styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
-        margin: 20,
     },
-    input: {
-        width: 200,
-        height: 40,
-        margin: 20,
-        borderWidth: 1,
-        padding: 10,
-        alignItems: "center",
-        justifyContent: "center",
-    }
 });
