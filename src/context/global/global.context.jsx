@@ -11,15 +11,15 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({children, user}) => {
     const [state, setState] = useState(initialState);
     const [todos, setTodos] = useState();
+    const [usuario, setUsuario] = useState(user);
 
     function login(email, pwd){
-        const user = {name: "Cesar ", lastname:"Cuellar"}
-
-        setState((current)=> ({ ...current, user}));
+        setState((current)=> ({ ...current, user: usuario}));
     }
 
     function logout(){
         setState((current)=>({ ...current, user: null }));
+        setUsuario((current)=> ({ ...current, authState: "signedOut" }));
     }
 
     async function listTodos(){
@@ -28,7 +28,7 @@ export const GlobalProvider = ({children, user}) => {
     }
 
     return(
-        <GlobalContext.Provider value={{ state, login, logout, listTodos, todos, user}}>
+        <GlobalContext.Provider value={{ state, login, logout, listTodos, todos, usuario}}>
             {children}
         </GlobalContext.Provider>
     );
