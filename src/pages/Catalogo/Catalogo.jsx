@@ -1,23 +1,23 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { Text, View } from 'react-native';
 import { styles } from "./Catalogo.styles";
 import {list} from "../../services/todos";
 
+import { GlobalContext } from "../../context/global/global.context";
+
 export default function CatalogoScreen({ onPress }) {
-    const [todos, setTodos] = useState();
-    async function listTodos(){
-        const todosFetched = await list();
-        console.log(todosFetched);
-        if(todosFetched) setTodos(todosFetched);
-    }
+    const {listTodos, todos} = useContext(GlobalContext);
 
     useEffect(() => {
         listTodos();
     },[])
+    
     return (
         <View style={styles.container}>
-            <Text>Catalogo</Text>
-            {todos && todos.map((todo)=> <Text>{`${todo.title} ${todo.author} ${todo.ISBN}`}</Text>)}
+            {todos && todos.map((todo)=> 
+            <><Text>Titulo: {`${todo.title}`}</Text><Text>Autor: {`${todo.author} `}</Text><Text style={{marginBottom: 30}}>ISBN: {`${todo.ISBN}`}</Text></>            
+            )}
+            
         </View>
     );
 }

@@ -9,9 +9,9 @@ import {GlobalProvider} from "./src/context/global/global.context";
 
 Amplify.configure(awsconfig);
 
-function App() {
+function App(props) {
   return (
-    <GlobalProvider>
+    <GlobalProvider user={props}>
       <MainNavigator/>
     </GlobalProvider>  
   );

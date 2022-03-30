@@ -24,7 +24,7 @@ const create = async(todo)=>{
 const onCreate = async(subscriptionFunction) => {
     const subscription = API.graphql(graphqlOperation(onCreateTodo)).subscribe({
         next:(todoData) => {
-            //subscriptionFunction();
+            subscriptionFunction();
         },
     });
     return subscription;

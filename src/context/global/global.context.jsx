@@ -1,4 +1,6 @@
 import React, {createContext, useState} from "react";
+import {list} from "../../services/todos";
+
 
 const initialState={
     user:null,
@@ -6,8 +8,9 @@ const initialState={
 };
 
 export const GlobalContext = createContext(initialState);
-export const GlobalProvider = ({children}) => {
+export const GlobalProvider = ({children, user}) => {
     const [state, setState] = useState(initialState);
+    const [todos, setTodos] = useState();
 
     function login(email, pwd){
         const user = {name: "Cesar ", lastname:"Cuellar"}
@@ -19,8 +22,13 @@ export const GlobalProvider = ({children}) => {
         setState((current)=>({ ...current, user: null }));
     }
 
+    async function listTodos(){
+        const todosFetched = await list();
+        if(todosFetched) setTodos(todosFetched);
+    }
+
     return(
-        <GlobalContext.Provider value={{ state, login, logout}}>
+        <GlobalContext.Provider value={{ state, login, logout, listTodos, todos, user}}>
             {children}
         </GlobalContext.Provider>
     );

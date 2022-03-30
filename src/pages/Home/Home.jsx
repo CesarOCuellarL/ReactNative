@@ -1,13 +1,17 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState, useEffect, useContext } from "react";
 import { Text, View, TextInput } from 'react-native';
 import { styles } from "./Home.styles";
+import { listTodos } from "../Catalogo";
 
 import ButtonComponent from "../../components/Button";
 
 import {create, onCreate} from "../../services/todos";
 
-export default function HomeScreen({ onPress }) {
+import { GlobalContext } from "../../context/global/global.context";
+
+export default function HomeScreen() {
     const [todo, setTodo] = useState({title:"", author:"", ISBN:""});
+    const {listTodos} = useContext(GlobalContext);
 
     async function createTodo(title, author, ISBN){
         const todoCreated = await create({title, author, ISBN})
@@ -21,7 +25,7 @@ export default function HomeScreen({ onPress }) {
     useEffect(() => {
         let subscription;
         (async function suscribe(){
-            subscription = await onCreate()
+            subscription = await onCreate(listTodos)
         })();
         return () => {
             subscription?.unsubscribe()
