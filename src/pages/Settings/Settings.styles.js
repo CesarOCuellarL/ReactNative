@@ -6,4 +6,13 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    input: {
+        width: 200,
+        height: 40,
+        margin: 15,
+        borderWidth: 1,
+        padding: 10,
+        alignItems: "center",
+        justifyContent: "center",
+    },
 })

@@ -5,7 +5,7 @@ import {list} from "../../services/Books";
 
 import { GlobalContext } from "../../context/global/global.context";
 
-export default function CatalogoScreen({ onPress }) {
+export default function CatalogoScreen() {
     const {listBooks, books} = useContext(GlobalContext);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function CatalogoScreen({ onPress }) {
     return (
         <View style={styles.container}>
             {books && books.map((book)=> 
-            <><Text>Name: {`${book.Name}`}</Text><Text>Description: {`${book.Description} `}</Text><Text>Estatus: {`${book.Estatus} `}</Text><Text>ISBN: {`${book.ISBN}`}</Text><Text>Categoria: {`${book.Categoria}`}</Text><Text style={{marginBottom: 30}}>FechaPublicacion: {`${book.FechaPublicacion}`}</Text></>            
+            <><Text>Name: {`${book.Name}`}</Text><Text>Description: {`${book.Description} `}</Text><Text>Estatus: {`${book.Estatus} `}</Text><Text>ISBN: {`${book.ISBN}`}</Text><Text>Categoria: {`${book.Categoria}`}</Text><Text style={{marginBottom: 30}}>Fecha de Publicacion: {`${book.FechaPublicacion}`}</Text></>            
             )}
         </View>
     );

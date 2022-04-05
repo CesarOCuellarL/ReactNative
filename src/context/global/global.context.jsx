@@ -1,6 +1,6 @@
 import React, {createContext, useState} from "react";
 import {list} from "../../services/Books";
-
+import { Auth } from 'aws-amplify';
 
 const initialState={
     user:null,
@@ -8,19 +8,22 @@ const initialState={
 };
 
 export const GlobalContext = createContext(initialState);
-export const GlobalProvider = ({children, user}) => {
+export const GlobalProvider = ({children}) => {
     const [state, setState] = useState(initialState);
     const [books, setBooks] = useState();
-    const [usuario, setUsuario] = useState(user);
+    const [usuario, setUsuario] = useState(Auth.user.username);
 
     function login(email, pwd){
+        console.log(Auth.user.username);
         setState((current)=> ({ ...current, user: usuario}));
     }
 
-    function logout(){
-        //setState((current)=>({ ...current, user: null }));
-        setUsuario((current)=> ({ ...current, authState: "signedOut" }));
-        console.log(usuario);
+    async function logout(){
+        try {
+            await Auth.signOut({ global: true });
+        } catch (error) {
+            console.log('error signing out: ', error);
+        }
     }
 
     async function listBooks(){
