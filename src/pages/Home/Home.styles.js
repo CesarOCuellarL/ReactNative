@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     input: {
         width: 200,
         height: 40,
-        margin: 20,
+        margin: 15,
         borderWidth: 1,
         padding: 10,
         alignItems: "center",

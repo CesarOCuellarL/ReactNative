@@ -1,5 +1,5 @@
 import React, {createContext, useState} from "react";
-import {list} from "../../services/todos";
+import {list} from "../../services/Books";
 
 
 const initialState={
@@ -10,7 +10,7 @@ const initialState={
 export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({children, user}) => {
     const [state, setState] = useState(initialState);
-    const [todos, setTodos] = useState();
+    const [books, setBooks] = useState();
     const [usuario, setUsuario] = useState(user);
 
     function login(email, pwd){
@@ -18,17 +18,18 @@ export const GlobalProvider = ({children, user}) => {
     }
 
     function logout(){
-        setState((current)=>({ ...current, user: null }));
+        //setState((current)=>({ ...current, user: null }));
         setUsuario((current)=> ({ ...current, authState: "signedOut" }));
+        console.log(usuario);
     }
 
-    async function listTodos(){
-        const todosFetched = await list();
-        if(todosFetched) setTodos(todosFetched);
+    async function listBooks(){
+        const booksFetched = await list();
+        if(booksFetched) setBooks(booksFetched);
     }
 
     return(
-        <GlobalContext.Provider value={{ state, login, logout, listTodos, todos, usuario}}>
+        <GlobalContext.Provider value={{ state, login, logout, listBooks, books, usuario}}>
             {children}
         </GlobalContext.Provider>
     );

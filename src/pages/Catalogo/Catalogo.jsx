@@ -1,23 +1,22 @@
 import React, {useState, useEffect, useContext} from "react";
 import { Text, View } from 'react-native';
 import { styles } from "./Catalogo.styles";
-import {list} from "../../services/todos";
+import {list} from "../../services/Books";
 
 import { GlobalContext } from "../../context/global/global.context";
 
 export default function CatalogoScreen({ onPress }) {
-    const {listTodos, todos} = useContext(GlobalContext);
+    const {listBooks, books} = useContext(GlobalContext);
 
     useEffect(() => {
-        listTodos();
+        listBooks();
     },[])
     
     return (
         <View style={styles.container}>
-            {todos && todos.map((todo)=> 
-            <><Text>Titulo: {`${todo.title}`}</Text><Text>Autor: {`${todo.author} `}</Text><Text style={{marginBottom: 30}}>ISBN: {`${todo.ISBN}`}</Text></>            
+            {books && books.map((book)=> 
+            <><Text>Name: {`${book.Name}`}</Text><Text>Description: {`${book.Description} `}</Text><Text>Estatus: {`${book.Estatus} `}</Text><Text>ISBN: {`${book.ISBN}`}</Text><Text>Categoria: {`${book.Categoria}`}</Text><Text style={{marginBottom: 30}}>FechaPublicacion: {`${book.FechaPublicacion}`}</Text></>            
             )}
-            
         </View>
     );
 }

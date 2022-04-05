@@ -7,10 +7,10 @@ import ButtonComponent from "../../components/Button";
 import { GlobalContext } from "../../context/global/global.context";
 
 export default function SettingsScreen({onPress}){
-    const {usuario} = useContext(GlobalContext);
+    const {state} = useContext(GlobalContext);
     return(
         <View style={styles.container}>
-            <Text>Settings</Text>
+            <Text>Settings</Text>         
             <ButtonComponent title="LogOut" onPress={onPress} color="#ff3f4f"/>
         </View>
     )
