@@ -5,15 +5,23 @@ import { withAuthenticator } from "aws-amplify-react-native";
 
 import MainNavigator from "./src/components/Navigator";
 
-import {GlobalProvider} from "./src/context/global/global.context";
+import { GlobalProvider } from "./src/context/global/global.context";
 
-Amplify.configure(awsconfig);
+Amplify.configure({
+  ...awsconfig,
+  Storage: {
+    AWSS3: {
+      bucket:
+        "https://amplify-closeline-dev-221103-deployment.s3.amazonaws.com/"
+    },
+  },
+});
 
 function App() {
   return (
     <GlobalProvider>
-      <MainNavigator/>
-    </GlobalProvider>  
+      <MainNavigator />
+    </GlobalProvider>
   );
 }
 export default withAuthenticator(App);
