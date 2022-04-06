@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "proyecto-181340",
-    "slug": "proyecto-181340",
+    "slug": "proyecto181340-slug",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,6 +20,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.alejandor.proyecto181340",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
