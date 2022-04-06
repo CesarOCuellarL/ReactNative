@@ -11,6 +11,17 @@ export const onCreateBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
+      Profile {
+        items {
+          id
+          Username
+          Avatar_url
+          createdAt
+          updatedAt
+          bookProfileId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -26,6 +37,17 @@ export const onUpdateBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
+      Profile {
+        items {
+          id
+          Username
+          Avatar_url
+          createdAt
+          updatedAt
+          bookProfileId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -41,8 +63,97 @@ export const onDeleteBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
+      Profile {
+        items {
+          id
+          Username
+          Avatar_url
+          createdAt
+          updatedAt
+          bookProfileId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
+    }
+  }
+`;
+export const onCreateProfile = /* GraphQL */ `
+  subscription OnCreateProfile {
+    onCreateProfile {
+      id
+      Username
+      Avatar_url
+      Book {
+        id
+        Name
+        Description
+        Estatus
+        ISBN
+        Categoria
+        FechaPublicacion
+        Profile {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      bookProfileId
+    }
+  }
+`;
+export const onUpdateProfile = /* GraphQL */ `
+  subscription OnUpdateProfile {
+    onUpdateProfile {
+      id
+      Username
+      Avatar_url
+      Book {
+        id
+        Name
+        Description
+        Estatus
+        ISBN
+        Categoria
+        FechaPublicacion
+        Profile {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      bookProfileId
+    }
+  }
+`;
+export const onDeleteProfile = /* GraphQL */ `
+  subscription OnDeleteProfile {
+    onDeleteProfile {
+      id
+      Username
+      Avatar_url
+      Book {
+        id
+        Name
+        Description
+        Estatus
+        ISBN
+        Categoria
+        FechaPublicacion
+        Profile {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      bookProfileId
     }
   }
 `;

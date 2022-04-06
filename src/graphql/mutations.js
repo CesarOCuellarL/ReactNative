@@ -14,6 +14,17 @@ export const createBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
+      Profile {
+        items {
+          id
+          Username
+          Avatar_url
+          createdAt
+          updatedAt
+          bookProfileId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -32,6 +43,17 @@ export const updateBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
+      Profile {
+        items {
+          id
+          Username
+          Avatar_url
+          createdAt
+          updatedAt
+          bookProfileId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -50,8 +72,106 @@ export const deleteBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
+      Profile {
+        items {
+          id
+          Username
+          Avatar_url
+          createdAt
+          updatedAt
+          bookProfileId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
+    }
+  }
+`;
+export const createProfile = /* GraphQL */ `
+  mutation CreateProfile(
+    $input: CreateProfileInput!
+    $condition: ModelProfileConditionInput
+  ) {
+    createProfile(input: $input, condition: $condition) {
+      id
+      Username
+      Avatar_url
+      Book {
+        id
+        Name
+        Description
+        Estatus
+        ISBN
+        Categoria
+        FechaPublicacion
+        Profile {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      bookProfileId
+    }
+  }
+`;
+export const updateProfile = /* GraphQL */ `
+  mutation UpdateProfile(
+    $input: UpdateProfileInput!
+    $condition: ModelProfileConditionInput
+  ) {
+    updateProfile(input: $input, condition: $condition) {
+      id
+      Username
+      Avatar_url
+      Book {
+        id
+        Name
+        Description
+        Estatus
+        ISBN
+        Categoria
+        FechaPublicacion
+        Profile {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      bookProfileId
+    }
+  }
+`;
+export const deleteProfile = /* GraphQL */ `
+  mutation DeleteProfile(
+    $input: DeleteProfileInput!
+    $condition: ModelProfileConditionInput
+  ) {
+    deleteProfile(input: $input, condition: $condition) {
+      id
+      Username
+      Avatar_url
+      Book {
+        id
+        Name
+        Description
+        Estatus
+        ISBN
+        Categoria
+        FechaPublicacion
+        Profile {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      bookProfileId
     }
   }
 `;
