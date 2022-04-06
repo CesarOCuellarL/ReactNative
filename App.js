@@ -12,8 +12,12 @@ Amplify.configure({
   Storage: {
     AWSS3: {
       bucket:
-        "https://amplify-closeline-dev-221103-deployment.s3.amazonaws.com/"
+        "amplify-proyecto181340-dev-124031-deployment",
+      region: "us-east-1"
     },
+    Analytics: {
+      disabled: true,      
+    }
   },
 });
 

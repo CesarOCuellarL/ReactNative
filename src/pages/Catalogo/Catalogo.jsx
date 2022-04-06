@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useEffect, useContext} from "react";
 import { Text, View } from 'react-native';
 import { styles } from "./Catalogo.styles";
 import {list} from "../../services/Books";
