@@ -14,17 +14,7 @@ export const createBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
-      Profile {
-        items {
-          id
-          Username
-          Avatar_url
-          createdAt
-          updatedAt
-          bookProfileId
-        }
-        nextToken
-      }
+      idProfile
       createdAt
       updatedAt
     }
@@ -43,17 +33,7 @@ export const updateBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
-      Profile {
-        items {
-          id
-          Username
-          Avatar_url
-          createdAt
-          updatedAt
-          bookProfileId
-        }
-        nextToken
-      }
+      idProfile
       createdAt
       updatedAt
     }
@@ -72,17 +52,7 @@ export const deleteBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
-      Profile {
-        items {
-          id
-          Username
-          Avatar_url
-          createdAt
-          updatedAt
-          bookProfileId
-        }
-        nextToken
-      }
+      idProfile
       createdAt
       updatedAt
     }
@@ -97,23 +67,8 @@ export const createProfile = /* GraphQL */ `
       id
       Username
       Avatar_url
-      Book {
-        id
-        Name
-        Description
-        Estatus
-        ISBN
-        Categoria
-        FechaPublicacion
-        Profile {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
-      bookProfileId
     }
   }
 `;
@@ -126,23 +81,8 @@ export const updateProfile = /* GraphQL */ `
       id
       Username
       Avatar_url
-      Book {
-        id
-        Name
-        Description
-        Estatus
-        ISBN
-        Categoria
-        FechaPublicacion
-        Profile {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
-      bookProfileId
     }
   }
 `;
@@ -155,23 +95,8 @@ export const deleteProfile = /* GraphQL */ `
       id
       Username
       Avatar_url
-      Book {
-        id
-        Name
-        Description
-        Estatus
-        ISBN
-        Categoria
-        FechaPublicacion
-        Profile {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
-      bookProfileId
     }
   }
 `;

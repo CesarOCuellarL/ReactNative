@@ -4,7 +4,7 @@ import { styles } from "./Settings.styles";
 import { Storage } from "aws-amplify";
 import ButtonComponent from "../../components/Button";
 
-import ImagePicker from 'react-native-image-picker';
+//import ImagePicker from 'react-native-image-picker';
 
 import { GlobalContext } from "../../context/global/global.context";
 
@@ -31,11 +31,6 @@ export default function SettingsScreen({ onPress }) {
 
   return (
     <View style={styles.container}>
-      <Text>THIS IS A EXAMPLE</Text>
-      <View>
-          <ButtonComponent title="download" onPress={()=>{downloadImage()}} />
-      </View>
-      <TextInput type="file" onChange={onChange} />
       <Text>Hola! {usuario}</Text>
       <ButtonComponent title="LogOut" onPress={onPress} color="#ff3f4f" />
     </View>
