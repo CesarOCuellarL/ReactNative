@@ -1,15 +1,14 @@
-import { Storage } from "aws-amplify";
 import React, { useContext, useState } from "react";
-import { Image, Text, TextInput, View } from "react-native";
-import { launchCamera } from "react-native-image-picker";
+import { Text, TextInput, View } from "react-native";
 import ButtonComponent from "../../components/Button";
+import ImagePickerComponent from "../../components/ImagePicker";
 import { GlobalContext } from "../../context/global/global.context";
 import { styles } from "./Settings.styles";
 
 
 export default function SettingsScreen({ onPress }) {
   const { usuario } = useContext(GlobalContext);
-  // const [image, setImage] = useState();
+   const [image, setImage] = useState(null);
 
   // const imageOptions = {
   //   mediaType: "photo",
@@ -18,9 +17,9 @@ export default function SettingsScreen({ onPress }) {
   //   includeBase64: true,
   // };
 
-  // async function onChange(e) {
-  //   const file = e.target.files[0];
-  //   console.log(file);
+  async function onChange(e) {
+    const file = e.target.files[0];
+    console.log(file);
 
   //   try {
   //     await Storage.put(file.name, file, {
@@ -29,7 +28,7 @@ export default function SettingsScreen({ onPress }) {
   //   } catch (error) {
   //     console.log("Error uploading file: ", error);
   //   }
-  // }
+  }
 
   // async function downloadImage() {
   //   let signedURL = await Storage.get(
@@ -44,24 +43,13 @@ export default function SettingsScreen({ onPress }) {
   //   console.log(result);
   // }
 
+
   return (
     <View style={styles.container}>
-      {/* <Text>THIS IS A EXAMPLE</Text>
-      <Image source={image} />
+      <Text>THIS IS A EXAMPLE</Text>
       <View>
-        <ButtonComponent
-          title="download"
-          onPress={() => {
-            downloadImage();
-          }}
-        />
-        <ButtonComponent
-          title="Abrir imagen"
-          onPress={() => {
-            openCamera();
-          }}
-        />
-      </View> */}
+          <ImagePickerComponent />
+      </View>
       <TextInput type="file" onChange={onChange} />
       <Text>Hola! {usuario}</Text>
       <ButtonComponent title="LogOut" onPress={onPress} color="#ff3f4f" />

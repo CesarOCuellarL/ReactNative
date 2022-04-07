@@ -10,24 +10,28 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.17.0",
+    "@react-native-async-storage/async-storage": "^1.17.3",
     "@react-native-community/netinfo": "^8.2.0",
     "@react-native-picker/picker": "^2.4.0",
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.2",
-    "aws-amplify": "^4.3.17",
-    "aws-amplify-react-native": "^6.0.3",
-    "expo": "^1.0.0",
+    "aws-amplify": "^4.3.19",
+    "aws-amplify-react-native": "^6.0.4",
+    "expo": "^44.0.0",
+    "expo-camera": "~12.1.2",
     "expo-status-bar": "~1.2.0",
     "expo-updates": "~0.11.6",
+    "link": "^0.1.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
-    "react-native-image-picker": "^4.7.3",
+    "react-native-elements": "^3.4.2",
+    "react-native-image-picker": "^3.8.1",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "strnum": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
