@@ -11,17 +11,7 @@ export const getBook = /* GraphQL */ `
       ISBN
       Categoria
       FechaPublicacion
-      Profile {
-        items {
-          id
-          Username
-          Avatar_url
-          createdAt
-          updatedAt
-          bookProfileId
-        }
-        nextToken
-      }
+      idProfile
       createdAt
       updatedAt
     }
@@ -42,9 +32,7 @@ export const listBooks = /* GraphQL */ `
         ISBN
         Categoria
         FechaPublicacion
-        Profile {
-          nextToken
-        }
+        idProfile
         createdAt
         updatedAt
       }
@@ -58,23 +46,8 @@ export const getProfile = /* GraphQL */ `
       id
       Username
       Avatar_url
-      Book {
-        id
-        Name
-        Description
-        Estatus
-        ISBN
-        Categoria
-        FechaPublicacion
-        Profile {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
-      bookProfileId
     }
   }
 `;
@@ -89,20 +62,8 @@ export const listProfiles = /* GraphQL */ `
         id
         Username
         Avatar_url
-        Book {
-          id
-          Name
-          Description
-          Estatus
-          ISBN
-          Categoria
-          FechaPublicacion
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
-        bookProfileId
       }
       nextToken
     }
