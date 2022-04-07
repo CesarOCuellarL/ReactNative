@@ -3,12 +3,9 @@ import React, { useContext, useState } from "react";
 import { Image, Text, TextInput, View } from "react-native";
 import { launchCamera } from "react-native-image-picker";
 import ButtonComponent from "../../components/Button";
-<<<<<<< HEAD
 
 //import ImagePicker from 'react-native-image-picker';
 
-=======
->>>>>>> 8618a711811b2b646aa8cc57e1e5b1c642647819
 import { GlobalContext } from "../../context/global/global.context";
 import { styles } from "./Settings.styles";
 
@@ -52,8 +49,6 @@ export default function SettingsScreen({ onPress }) {
 
   return (
     <View style={styles.container}>
-<<<<<<< HEAD
-=======
       {/* <Text>THIS IS A EXAMPLE</Text>
       <Image source={image} />
       <View>
@@ -71,7 +66,6 @@ export default function SettingsScreen({ onPress }) {
         />
       </View> */}
       <TextInput type="file" onChange={onChange} />
->>>>>>> 8618a711811b2b646aa8cc57e1e5b1c642647819
       <Text>Hola! {usuario}</Text>
       <ButtonComponent title="LogOut" onPress={onPress} color="#ff3f4f" />
     </View>
