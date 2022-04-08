@@ -13,7 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 
 export default function SettingsScreen({ onPress }) {
-  const { usuario, initialTodoState } = useContext(GlobalContext);
+  const { usuario } = useContext(GlobalContext);
   const [image, setImage] = useState(null);
   const [percentage, setPercentage] = useState(0);
 
