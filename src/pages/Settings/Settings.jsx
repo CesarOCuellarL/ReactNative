@@ -13,7 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 
 export default function SettingsScreen({ onPress }) {
-  const { usuario } = useContext(GlobalContext);
+  const { usuario, logout } = useContext(GlobalContext);
   const [image, setImage] = useState(null);
   const [percentage, setPercentage] = useState(0);
 
@@ -132,6 +132,7 @@ export default function SettingsScreen({ onPress }) {
 
       <ButtonComponent onPress={pickImage} title="Agregar desde Galeria" />
       <ButtonComponent onPress={takePhoto} title="Tomar Foto" />
+      <ButtonComponent onPress={logout} title="LogOut" color="#FF0000" />
     </View>
   );
 }
