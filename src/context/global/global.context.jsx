@@ -2,19 +2,16 @@ import React, {createContext, useState} from "react";
 import {list} from "../../services/Books";
 import { Auth } from 'aws-amplify';
 
-const initialState={
-    user:null,
-    colorDefault:"#00a884"
-};
+const initialTodoState = { Username: '', Avatar_url: '' }
+const initialAppState = {showForm: false, imageURI: '', user:null, colorDefault:"#00a884"}
 
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext(initialAppState);
 export const GlobalProvider = ({children}) => {
-    const [state, setState] = useState(initialState);
+    const [state, setState] = useState(initialAppState);
     const [books, setBooks] = useState();
     const [usuario, setUsuario] = useState(Auth.user.username);
 
     function login(email, pwd){
-        console.log(Auth.user.username);
         setState((current)=> ({ ...current, user: usuario}));
     }
 
@@ -32,7 +29,7 @@ export const GlobalProvider = ({children}) => {
     }
 
     return(
-        <GlobalContext.Provider value={{ state, login, logout, listBooks, books, usuario}}>
+        <GlobalContext.Provider value={{ state, login, logout, listBooks, books, usuario, initialTodoState}}>
             {children}
         </GlobalContext.Provider>
     );

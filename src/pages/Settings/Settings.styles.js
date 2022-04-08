@@ -15,4 +15,20 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    title: {
+        fontSize: 20,
+        marginBottom: 20,
+        textAlign: "center",
+        marginHorizontal: 15,
+    },
+    percentage: {
+        marginBottom: 10,
+    },
+    result: {
+        paddingTop: 5,
+    },
+    info: {
+        textAlign: "center",
+        marginBottom: 20,
+    },
 })
