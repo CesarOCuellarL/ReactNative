@@ -2,7 +2,6 @@ import React, {createContext, useState} from "react";
 import {list} from "../../services/Books";
 import { Auth } from 'aws-amplify';
 
-const initialTodoState = { Username: '', Avatar_url: '' }
 const initialAppState = {showForm: false, imageURI: '', user:null, colorDefault:"#00a884"}
 
 export const GlobalContext = createContext(initialAppState);

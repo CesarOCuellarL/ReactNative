@@ -1,6 +1,6 @@
 import { Storage, Auth } from "aws-amplify";
 import React, { useContext, useState, useEffect  } from "react";
-import { Image, Text, TextInput, View, Platform } from "react-native";
+import { Image, Text, View, Platform } from "react-native";
 import ButtonComponent from "../../components/Button";
 
 import * as Clipboard from "expo-clipboard";
