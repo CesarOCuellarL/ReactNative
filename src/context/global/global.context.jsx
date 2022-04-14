@@ -28,7 +28,7 @@ export const GlobalProvider = ({children}) => {
     }
 
     return(
-        <GlobalContext.Provider value={{ state, login, logout, listBooks, books, usuario, initialTodoState}}>
+        <GlobalContext.Provider value={{ state, login, logout, listBooks, books, usuario}}>
             {children}
         </GlobalContext.Provider>
     );
